@@ -46,7 +46,7 @@ eksctl create nodegroup \
   --nodes-max 4 \
   --node-volume-size 20 \
   --ssh-access \
-  --ssh-public-key kubernetes \
+  --ssh-public-key sri \
   --managed \
   --asg-access \
   --external-dns-access \
@@ -58,9 +58,9 @@ eksctl create nodegroup \
 # Commented out to avoid overwrite, uncomment only if required
 
 # echo "Installing kubectl v1.21.14 (optional overwrite)..."
-# curl -LO https://dl.k8s.io/release/v1.21.14/bin/linux/amd64/kubectl
-# sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-# kubectl version --client
+curl -LO https://dl.k8s.io/release/v1.21.14/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
 
 # Get nodes
 echo "Getting node list..."
